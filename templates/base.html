@@ -1,0 +1,18 @@
+{% load django_vite %}
+{% load js_routes_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django + Inertia.js + Svelte = ❤️</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+
+    {% vite_hmr_client %}
+    {% vite_asset 'src/entry-client.ts' %}
+</head>
+<body>
+    {% block inertia %}{% endblock %}
+    {% js_routes %}
+</body>
+</html>
